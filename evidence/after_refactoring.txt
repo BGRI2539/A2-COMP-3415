@@ -1,0 +1,91 @@
+test_cancellation_restores_stock_but_keeps_order_in_history (test_safety_net.SafetyNetTests.test_cancellation_restores_stock_but_keeps_order_in_history) ... ok
+test_cancelled_order_id_is_not_reused (test_safety_net.SafetyNetTests.test_cancelled_order_id_is_not_reused) ... ok
+test_corrupt_save_file_raises_error_without_resetting_data (test_safety_net.SafetyNetTests.test_corrupt_save_file_raises_error_without_resetting_data) ... ok
+test_delivery_is_free_at_exactly_10000_cents (test_safety_net.SafetyNetTests.test_delivery_is_free_at_exactly_10000_cents) ... ok
+test_duplicate_product_lines_must_respect_combined_stock (test_safety_net.SafetyNetTests.test_duplicate_product_lines_must_respect_combined_stock) ... FAIL
+test_failed_placement_does_not_change_prior_order_or_stock (test_safety_net.SafetyNetTests.test_failed_placement_does_not_change_prior_order_or_stock) ... ok
+test_history_and_order_ids_survive_reopening (test_safety_net.SafetyNetTests.test_history_and_order_ids_survive_reopening) ... ok
+test_invalid_customer_fulfillment_and_items_are_rejected (test_safety_net.SafetyNetTests.test_invalid_customer_fulfillment_and_items_are_rejected) ... ok
+test_invalid_quantity_types_and_limits_are_rejected (test_safety_net.SafetyNetTests.test_invalid_quantity_types_and_limits_are_rejected) ... ok
+test_last_unit_in_stock_can_be_ordered (test_safety_net.SafetyNetTests.test_last_unit_in_stock_can_be_ordered) ... ok
+test_quote_and_order_have_identical_price_and_item_details (test_safety_net.SafetyNetTests.test_quote_and_order_have_identical_price_and_item_details) ... ok
+test_quote_contains_correct_item_details_and_does_not_write_state (test_safety_net.SafetyNetTests.test_quote_contains_correct_item_details_and_does_not_write_state) ... ok
+test_repeated_cancellation_does_not_restore_stock_twice (test_safety_net.SafetyNetTests.test_repeated_cancellation_does_not_restore_stock_twice) ... FAIL
+test_student_discount_applies_at_exactly_5000_cents (test_safety_net.SafetyNetTests.test_student_discount_applies_at_exactly_5000_cents) ... FAIL
+test_student_discount_applies_to_order_at_exactly_5000_cents (test_safety_net.SafetyNetTests.test_student_discount_applies_to_order_at_exactly_5000_cents) ... FAIL
+test_unknown_order_rejected_without_mutation (test_safety_net.SafetyNetTests.test_unknown_order_rejected_without_mutation) ... ok
+test_cancel_order_restores_stock (test_smoke.OrderSmokeTests.test_cancel_order_restores_stock) ... ok
+test_order_can_be_reopened (test_smoke.OrderSmokeTests.test_order_can_be_reopened) ... ok
+test_regular_pickup_quote (test_smoke.OrderSmokeTests.test_regular_pickup_quote) ... ok
+test_student_delivery_quote (test_smoke.OrderSmokeTests.test_student_delivery_quote) ... ok
+
+======================================================================
+FAIL: test_duplicate_product_lines_must_respect_combined_stock (test_safety_net.SafetyNetTests.test_duplicate_product_lines_must_respect_combined_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/COMP3415_A2_PostCheckpoint_WorkingCopy/COMP3415-A2-Campus-Supply-Desk-main/tests/test_safety_net.py", line 119, in test_duplicate_product_lines_must_respect_combined_stock
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_repeated_cancellation_does_not_restore_stock_twice (test_safety_net.SafetyNetTests.test_repeated_cancellation_does_not_restore_stock_twice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/COMP3415_A2_PostCheckpoint_WorkingCopy/COMP3415-A2-Campus-Supply-Desk-main/tests/test_safety_net.py", line 151, in test_repeated_cancellation_does_not_restore_stock_twice
+    self.assertEqual(self.service.catalog(), catalog_before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'pr[331 chars]ck': 9}, {'product_id': 'bag', 'name': 'Canvas[40 chars]: 4}] != [{'pr[331 chars]ck': 8}, {'product_id': 'bag', 'name': 'Canvas[40 chars]: 4}]
+
+First differing element 3:
+{'pro[13 chars]g', 'name': 'Campus mug', 'unit_price_cents': 1500, 'stock': 9}
+{'pro[13 chars]g', 'name': 'Campus mug', 'unit_price_cents': 1500, 'stock': 8}
+
+  [{'name': 'Notebook',
+    'product_id': 'notebook',
+    'stock': 20,
+    'unit_price_cents': 500},
+   {'name': 'Pen pack',
+    'product_id': 'pen-pack',
+    'stock': 10,
+    'unit_price_cents': 750},
+   {'name': 'Campus hoodie',
+    'product_id': 'hoodie',
+    'stock': 5,
+    'unit_price_cents': 4000},
+   {'name': 'Campus mug',
+    'product_id': 'mug',
+-   'stock': 9,
+?            ^
+
++   'stock': 8,
+?            ^
+
+    'unit_price_cents': 1500},
+   {'name': 'Canvas bag',
+    'product_id': 'bag',
+    'stock': 4,
+    'unit_price_cents': 2500}]
+
+======================================================================
+FAIL: test_student_discount_applies_at_exactly_5000_cents (test_safety_net.SafetyNetTests.test_student_discount_applies_at_exactly_5000_cents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/COMP3415_A2_PostCheckpoint_WorkingCopy/COMP3415-A2-Campus-Supply-Desk-main/tests/test_safety_net.py", line 64, in test_student_discount_applies_at_exactly_5000_cents
+    self.assertEqual(quote["discount_cents"], 500)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 500
+
+======================================================================
+FAIL: test_student_discount_applies_to_order_at_exactly_5000_cents (test_safety_net.SafetyNetTests.test_student_discount_applies_to_order_at_exactly_5000_cents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/COMP3415_A2_PostCheckpoint_WorkingCopy/COMP3415-A2-Campus-Supply-Desk-main/tests/test_safety_net.py", line 69, in test_student_discount_applies_to_order_at_exactly_5000_cents
+    self.assertEqual(order["discount_cents"], 500)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 500
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.017s
+
+FAILED (failures=4)

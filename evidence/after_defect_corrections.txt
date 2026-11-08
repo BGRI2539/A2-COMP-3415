@@ -1,0 +1,25 @@
+test_cancellation_restores_stock_but_keeps_order_in_history (test_safety_net.SafetyNetTests.test_cancellation_restores_stock_but_keeps_order_in_history) ... ok
+test_cancelled_order_id_is_not_reused (test_safety_net.SafetyNetTests.test_cancelled_order_id_is_not_reused) ... ok
+test_corrupt_save_file_raises_error_without_resetting_data (test_safety_net.SafetyNetTests.test_corrupt_save_file_raises_error_without_resetting_data) ... ok
+test_delivery_is_free_at_exactly_10000_cents (test_safety_net.SafetyNetTests.test_delivery_is_free_at_exactly_10000_cents) ... ok
+test_duplicate_product_lines_must_respect_combined_stock (test_safety_net.SafetyNetTests.test_duplicate_product_lines_must_respect_combined_stock) ... ok
+test_failed_placement_does_not_change_prior_order_or_stock (test_safety_net.SafetyNetTests.test_failed_placement_does_not_change_prior_order_or_stock) ... ok
+test_history_and_order_ids_survive_reopening (test_safety_net.SafetyNetTests.test_history_and_order_ids_survive_reopening) ... ok
+test_invalid_customer_fulfillment_and_items_are_rejected (test_safety_net.SafetyNetTests.test_invalid_customer_fulfillment_and_items_are_rejected) ... ok
+test_invalid_quantity_types_and_limits_are_rejected (test_safety_net.SafetyNetTests.test_invalid_quantity_types_and_limits_are_rejected) ... ok
+test_last_unit_in_stock_can_be_ordered (test_safety_net.SafetyNetTests.test_last_unit_in_stock_can_be_ordered) ... ok
+test_quote_and_order_have_identical_price_and_item_details (test_safety_net.SafetyNetTests.test_quote_and_order_have_identical_price_and_item_details) ... ok
+test_quote_contains_correct_item_details_and_does_not_write_state (test_safety_net.SafetyNetTests.test_quote_contains_correct_item_details_and_does_not_write_state) ... ok
+test_repeated_cancellation_does_not_restore_stock_twice (test_safety_net.SafetyNetTests.test_repeated_cancellation_does_not_restore_stock_twice) ... ok
+test_student_discount_applies_at_exactly_5000_cents (test_safety_net.SafetyNetTests.test_student_discount_applies_at_exactly_5000_cents) ... ok
+test_student_discount_applies_to_order_at_exactly_5000_cents (test_safety_net.SafetyNetTests.test_student_discount_applies_to_order_at_exactly_5000_cents) ... ok
+test_unknown_order_rejected_without_mutation (test_safety_net.SafetyNetTests.test_unknown_order_rejected_without_mutation) ... ok
+test_cancel_order_restores_stock (test_smoke.OrderSmokeTests.test_cancel_order_restores_stock) ... ok
+test_order_can_be_reopened (test_smoke.OrderSmokeTests.test_order_can_be_reopened) ... ok
+test_regular_pickup_quote (test_smoke.OrderSmokeTests.test_regular_pickup_quote) ... ok
+test_student_delivery_quote (test_smoke.OrderSmokeTests.test_student_delivery_quote) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.012s
+
+OK
